@@ -1,0 +1,20 @@
+{
+  "name": "proxeus_contract",
+  "version": "1.0.0",
+  "description": "Proxeus FileStorage smart contract tests",
+  "main": "none",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "scripts": {
+      "preinstall": "npm install -g ganache-cli && npm install -g truffle"
+    },
+    "test": "truffle test"
+  },
+  "author": "Lukas Karth",
+  "license": "ISC",
+  "dependencies": {
+    "truffle-assertions": "^0.9.1"
+  }
+}
