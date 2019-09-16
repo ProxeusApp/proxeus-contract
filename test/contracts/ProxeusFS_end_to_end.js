@@ -10,7 +10,7 @@ contract('ProxeusFS end-to-end', async accounts => {
   const userAccount = accounts[2];
 
   before(async () => {
-    contract = await ProxeusFS.new();
+    contract = await ProxeusFS.new(ownerAccount);
   });
 
   it("should verify a registered hash correctly", async () => {
@@ -72,7 +72,7 @@ contract('ProxeusFS end-to-end', async accounts => {
     assert.equal(ownerAccount, signers[1])
   });
 
-  it('should return an empty array with existing file but no signers', async() => {
+  it('getFileSigners should return an empty array with existing file but no signers', async() => {
     const hash = "0x4313334560000000000000000000000000000000000000000000000000000000";
     await contract.registerFile(hash, "0x0");
 

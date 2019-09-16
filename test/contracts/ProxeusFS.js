@@ -5,10 +5,11 @@ const ProxeusFS = artifacts.require('../contracts/ProxeusFS.sol');
 contract('ProxeusFS', async accounts => {
   let contract;
 
+  const ownerAccount = accounts[1];
   const userAccount = accounts[2];
 
   before(async () => {
-    contract = await ProxeusFS.new();
+    contract = await ProxeusFS.new(ownerAccount);
   });
 
   it('should registerFile correctly', async () => {
