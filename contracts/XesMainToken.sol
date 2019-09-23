@@ -1,12 +1,12 @@
 pragma solidity 0.5.3;
 
 contract SafeMath {
-  function safeSub(uint a, uint b) pure internal returns (uint) {
+  function safeSub(uint a, uint b) pure internal returns (uint) { // solhint-disable-line
     assert(b <= a);
     return a - b;
   }
 
-  function safeAdd(uint a, uint b) pure internal returns (uint) {
+  function safeAdd(uint a, uint b) pure internal returns (uint) { // solhint-disable-line
     uint c = a + b;
     assert(c >= a && c >= b);
     return c;
@@ -21,16 +21,16 @@ contract ERC20 {
   function transfer(address toAddress, uint value) public returns (bool ok);
   function transferFrom(address fromAddress, address toAddress, uint value) public returns (bool ok);
   function approve(address spender, uint value) public returns (bool ok);
-  event Transfer(address indexed fromAddress, address indexed toAddress, uint value);
+  event Transfer(address indexed fromAddress, address indexed toAddress, uint value); // solhint-disable-line
   event Approval(address indexed owner, address indexed spender, uint value);
 }
 
 
 contract StandardToken is ERC20, SafeMath {
-  mapping (address => uint) balances;
-  mapping (address => mapping (address => uint)) allowed;
+  mapping (address => uint) balances; // solhint-disable-line
+  mapping (address => mapping (address => uint)) allowed; // solhint-disable-line
 
-  function transfer(address _to, uint _value) public returns (bool success) {
+  function transfer(address _to, uint _value) public returns (bool success) { // solhint-disable-line
     balances[msg.sender] = safeSub(balances[msg.sender], _value);
     balances[_to] = safeAdd(balances[_to], _value);
     emit Transfer(msg.sender, _to, _value);

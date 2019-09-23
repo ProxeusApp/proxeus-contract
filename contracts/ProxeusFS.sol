@@ -53,7 +53,7 @@ contract ProxeusFS {
   /// @dev Function signFile lets users sign the provided bytes32 keccak hash by storing the message sender address if the hash as been registered before
   /// @param _hash bytes32 - the keccak hash of a file
   /// @return FileSignedEvent(_hash, msg.sender) is emitted on success, reverts if hash not registered
-  function signFile(bytes32 _hash) fileMustExist(_hash) external {
+  function signFile(bytes32 _hash) external fileMustExist(_hash) {
     require(!files[_hash].signers[msg.sender], "file already signed by sender");
 
     files[_hash].signerIndex[files[_hash].signersCount] = msg.sender;
@@ -70,7 +70,7 @@ contract ProxeusFS {
   function getFileSigners(bytes32 _hash) external view fileMustExist(_hash) returns(address[] memory) {
     //map to array
     address[] memory signerAddresses = new address[](files[_hash].signersCount);
-    for (uint256 i = 0; i < files[_hash].signersCount; i++){
+    for (uint256 i = 0; i < files[_hash].signersCount; i++) {
       address signerAddress = files[_hash].signerIndex[i];
         signerAddresses[i] = signerAddress;
     }
