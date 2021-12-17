@@ -37,7 +37,8 @@ yarn coverage
 ```
 
 ## Linter
-Please use this [solidity VSCode plugin](https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity) to ensure your contracts follows the solidity style and security guides.
+Please use a Solidity [VSCode plugin](https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity) or [Remix editor](https://remix.ethereum.org/) (see [Tutorial](https://remix-ide.readthedocs.io/fr/stable/create_deploy.html)) to ensure your contracts follows the style and security guides.
+
 __`yarn test` only runs, if no linter issues detected!__
 
 All security rules should be implemented according [ConsenSys Guide for Smart Contracts](https://consensys.github.io/smart-contract-best-practices/recommendations/).
@@ -47,7 +48,7 @@ All style guide rules should be implemented according [Solidity Style Guide](htt
 For more information look into the [Solhint docs](https://github.com/protofire/solhint).
 
 ## Requirements
-The server side scripts requires NodeJS >= 8 to work properly.
+The server side scripts requires NodeJS >= 11 to work properly.
 Go to [NVM](https://github.com/creationix/nvm) and follow the installation description.
 
 ### Use correct NodeJS version for this project
