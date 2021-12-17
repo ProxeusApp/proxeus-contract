@@ -1,16 +1,11 @@
 {
-    "extends": "default",
+    "extends": "solhint:recommended",
     "rules": {
-        "two-lines-top-level-separator": false,
-        "func-order": false,
-        "compiler-fixed": false,
-        "max-line-length": false,
-        "space-after-comma": false,
-        "indent": false,
-        "not-rely-on-time": false,
-        "var-name-mixedcase": false,
-        "const-name-snakecase": false,
-        "max-states-count": false,
-        "separate-by-one-line-in-contract": false
+        "func-order": "off",
+        "max-line-length": "off",
+        "not-rely-on-time": "off",
+        "var-name-mixedcase": "off",
+        "const-name-snakecase": "off",
+        "max-states-count": "off"
     }
 }
