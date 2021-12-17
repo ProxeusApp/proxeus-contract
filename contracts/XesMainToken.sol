@@ -1,4 +1,4 @@
-pragma solidity 0.5.3;
+pragma solidity ^0.5.8;
 
 contract SafeMath {
   function safeSub(uint a, uint b) pure internal returns (uint) { // solhint-disable-line
