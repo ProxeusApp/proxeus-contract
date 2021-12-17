@@ -1,4 +1,4 @@
-pragma solidity ^0.5.8;
+pragma solidity ^0.5.17;
 
 /// @title Proxeus File Storage Contract
 /// @notice ProxeusFS provides a store to register & sign hashes of documents
