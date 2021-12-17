@@ -34,7 +34,7 @@
   "dependencies": {
     "ethers": "^5",
     "moment": "^2",
-    "@openzeppelin/contracts": "^4",
+    "@openzeppelin/contracts": "^2",
     "truffle": "^5",
     "truffle-assertions": "^0.9",
     "truffle-flattener": "^1",
