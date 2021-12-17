@@ -6,7 +6,8 @@ const cnf               = require('./config/networks.json');
 const HDWalletProvider  = require('truffle-hdwallet-provider');
 
 require('babel-register');
-require('babel-polyfill');
+require('core-js/stable');
+require('regenerator-runtime/runtime');
 
 const network   = process.env.NETWORK;
 let secrets     = '';

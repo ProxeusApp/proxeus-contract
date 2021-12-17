@@ -6,7 +6,8 @@
  * @author Patrice Juergens <pj@validitylabs.org>
  */
 
-require('babel-polyfill');
+require('core-js/stable');
+require('regenerator-runtime/runtime');
 
 const env   = process.env.NODE_ENV  || 'develop';
 const task  = process.env.TASK;
