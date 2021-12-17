@@ -13,7 +13,7 @@ const env   = process.env.NODE_ENV  || 'develop';
 const task  = process.env.TASK;
 
 if (env !== 'production') {
-    require('babel-register');
+    require('@babel/register');
 }
 
 const log = require('../lib/logger').logger;

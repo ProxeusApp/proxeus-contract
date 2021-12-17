@@ -3,9 +3,9 @@
  */
 
 const cnf               = require('./config/networks.json');
-const HDWalletProvider  = require('truffle-hdwallet-provider');
+const HDWalletProvider  = require('@truffle/hdwallet-provider');
 
-require('babel-register');
+require('@babel/register');
 require('core-js/stable');
 require('regenerator-runtime/runtime');
 

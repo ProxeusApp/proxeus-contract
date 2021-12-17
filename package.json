@@ -32,30 +32,30 @@
     "postinstall": "node ./tools/hashChecker.js"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^2",
+    "@truffle/hdwallet-provider": "^2",
     "ethers": "^5",
     "moment": "^2",
-    "@openzeppelin/contracts": "^2",
     "truffle": "^5",
     "truffle-assertions": "^0.9",
     "truffle-flattener": "^1",
-    "@truffle/hdwallet-provider": "^2",
     "web3": "^1",
     "winston": "^3"
   },
   "devDependencies": {
     "@babel/cli": "*",
     "@babel/core": "^7",
-    "@babel/eslint-parser": "*",
+    "@babel/node": "^7",
     "@babel/preset-env": "*",
-    "@babel/register": "*",
+    "babel-core": "^7.0.0-bridge.0",
     "chai": "*",
     "chai-as-promised": "*",
     "chai-bignumber": "*",
     "colors": "*",
+    "core-js": "^3",
     "cross-env": "*",
     "eslint": "*",
     "eslint-config-xo": "*",
-    "eslint-plugin-babel": "*",
     "eth-gas-reporter": "*",
     "ethereumjs-abi": "*",
     "ganache-core": "*",
@@ -73,5 +73,8 @@
   "optionalDevDependencies": {
     "fsevents": "*",
     "windows-build-tools": "*"
+  },
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
   }
 }

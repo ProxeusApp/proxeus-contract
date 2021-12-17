@@ -21,7 +21,7 @@ const flatten = require('truffle-flattener');
 
 const env           = process.env.NODE_ENV  || 'develop';
 const task          = process.env.TASK;
-const bnode         = env === 'production' ? 'node' : 'babel-node';
+const bnode         = env === 'production' ? 'node' : 'npx babel-node';
 const configDir     = path.join(__dirname, '/../../config/');
 const deploymentDir = path.join(__dirname, '/../../deployment/contracts/');
 let dead            = false;
