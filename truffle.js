@@ -27,7 +27,7 @@ const migrationsDir     = path.join(basePath, 'migrations/contracts');
 
 module.exports = {
     plugins: [
-        'truffle-plugin-hello'
+        'solidity-coverage'
     ],
     mocha: {
         useColors: true // disable bottom for testing dev/troubleshooting
@@ -39,7 +39,7 @@ module.exports = {
     },
     compilers: {
         solc: {
-            version: '0.5.3',
+            version: '0.5.17',
             docker: false,
             settings: {
                 optimizer: {
