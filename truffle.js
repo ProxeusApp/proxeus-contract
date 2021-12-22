@@ -3,10 +3,11 @@
  */
 
 const cnf               = require('./config/networks.json');
-const HDWalletProvider  = require('truffle-hdwallet-provider');
+const HDWalletProvider  = require('@truffle/hdwallet-provider');
 
-require('babel-register');
-require('babel-polyfill');
+require('@babel/register');
+require('core-js/stable');
+require('regenerator-runtime/runtime');
 
 const network   = process.env.NETWORK;
 let secrets     = '';
@@ -26,7 +27,7 @@ const migrationsDir     = path.join(basePath, 'migrations/contracts');
 
 module.exports = {
     plugins: [
-        'truffle-plugin-hello'
+        'solidity-coverage'
     ],
     mocha: {
         useColors: true // disable bottom for testing dev/troubleshooting
@@ -38,7 +39,7 @@ module.exports = {
     },
     compilers: {
         solc: {
-            version: '0.5.3',
+            version: '0.5.17',
             docker: false,
             settings: {
                 optimizer: {

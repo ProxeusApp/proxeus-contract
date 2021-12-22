@@ -21,7 +21,7 @@ const flatten = require('truffle-flattener');
 
 const env           = process.env.NODE_ENV  || 'develop';
 const task          = process.env.TASK;
-const bnode         = env === 'production' ? 'node' : 'babel-node';
+const bnode         = env === 'production' ? 'node' : 'npx babel-node';
 const configDir     = path.join(__dirname, '/../../config/');
 const deploymentDir = path.join(__dirname, '/../../deployment/contracts/');
 let dead            = false;
@@ -272,7 +272,7 @@ export async function run() {
                 shell: true
             });
 
-            spawnSync('truffle test ' + ' --network develop --migrations_directory migrations_null', {
+            spawnSync('truffle test ' + ' --network develop', {
                 stdio: 'inherit',
                 shell: true
             });
@@ -298,13 +298,8 @@ export async function run() {
         case 'coverage':
             // remove build folder, otherwise the result of code coverage might not be correct
             sh.rm('-fr', './build');
-            sh.rm('-fr', './coverageEnv');
-            sh.rm('-fr', './allFiredEvents');
 
-            sh.mkdir('./coverageEnv');
-            sh.touch('./allFiredEvents');
-
-            spawnSync('solidity-coverage', {
+            spawnSync('truffle run coverage', {
                 stdio: 'inherit',
                 shell: true
             });

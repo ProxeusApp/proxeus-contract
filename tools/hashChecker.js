@@ -5,27 +5,27 @@ const assert    = require('assert');
 // Valid hashes using Keccak-256
 
 const contracts = {
-    Crowdsale       : fs.readFileSync('node_modules/openzeppelin-solidity/contracts/crowdsale/Crowdsale.sol'),
-    ERC20Mintable   : fs.readFileSync('node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Mintable.sol'),
-    ERC20Pausable   : fs.readFileSync('node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20Pausable.sol'),
-    Pausable        : fs.readFileSync('node_modules/openzeppelin-solidity/contracts/lifecycle/Pausable.sol'),
-    Ownable         : fs.readFileSync('node_modules/openzeppelin-solidity/contracts/ownership/Ownable.sol'),
-    ERC20           : fs.readFileSync('node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20.sol'),
-    IERC20          : fs.readFileSync('node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol'),
-    SafeMath        : fs.readFileSync('node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol'),
-    TokenVesting    : fs.readFileSync('node_modules/openzeppelin-solidity/contracts/drafts/TokenVesting.sol')
+    Crowdsale       : fs.readFileSync('node_modules/@openzeppelin/contracts/crowdsale/Crowdsale.sol'),
+    ERC20Mintable   : fs.readFileSync('node_modules/@openzeppelin/contracts/token/ERC20/ERC20Mintable.sol'),
+    ERC20Pausable   : fs.readFileSync('node_modules/@openzeppelin/contracts/token/ERC20/ERC20Pausable.sol'),
+    Pausable        : fs.readFileSync('node_modules/@openzeppelin/contracts/lifecycle/Pausable.sol'),
+    Ownable         : fs.readFileSync('node_modules/@openzeppelin/contracts/ownership/Ownable.sol'),
+    ERC20           : fs.readFileSync('node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol'),
+    IERC20          : fs.readFileSync('node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol'),
+    SafeMath        : fs.readFileSync('node_modules/@openzeppelin/contracts/math/SafeMath.sol'),
+    TokenVesting    : fs.readFileSync('node_modules/@openzeppelin/contracts/drafts/TokenVesting.sol')
 };
 
 const hashes = {
-    Crowdsale     : '0x8347d09dc704fcd85e048f30bb17d8ec8c0f2bcea7287651fd9f8d1a3d3be24f',
-    ERC20Mintable : '0xc4ca2883e0b0743604143952024c250bb13737ad54bb666b117efdcb766fe3a8',
-    ERC20Pausable : '0x37b840977505e5f6d74bc8fa3d0217facc7913d0ecf064da3e3b26494acd37de',
-    Pausable      : '0x3b0ed31deeba7e3c6cfbbe8092a6b427084ee390800a06acdea5c17c8185d606',
-    Ownable       : '0x980de387a1a020a498f53d00f89fecebb12c949a17e8f160093c0303ede2b786',
-    ERC20         : '0xba431353cb4fe70777ac026231eb5468e41aa1e81240a2b8136917acc5fff4dc',
-    IERC20        : '0x079c4e23ee448f529e43bfa3c4e8fb4be52cd0318ee923a276835bedf45b93d8',
-    SafeMath      : '0x965012d27b4262d7a41f5028cbb30c51ebd9ecd4be8fb30380aaa7a3c64fbc8b',
-    TokenVesting  : '0x72be2faa60fb08f2d56976e20ce80a2cd8fb71f980eef55d853d6e6836c92d5b'
+    Crowdsale     : '0xe612eb8a3023c1a4f4d7e2d0aaf7f19c25e9d772c46a6e95790ddb42ba7baa99',
+    ERC20Mintable : '0xa2b957cf89692c504962afb7506999155f83385373f808243246cd5879de5940',
+    ERC20Pausable : '0xd5ae72078a1c90af870e1b9b86b0fc05eb14b4034e417bc66d151d3eb4d342ca',
+    Pausable      : '0xd3e5a49edfb74654d122962cc60b917d1c60461e669a7262fd7aba201fac1260',
+    Ownable       : '0x6fb9d7889769d7cc161225f9ef7a90e468ba9788b253816f8d8b6894d3472c24',
+    ERC20         : '0xb15af804e2bc97db51e4e103f13de9fe13f87e6b835d7a88c897966c0e58506e',
+    IERC20        : '0xe5bb0f57cff3e299f360052ba50f1ea0fff046df2be070b6943e0e3c3fdad8a9',
+    SafeMath      : '0x640b6dee7a4b830bdfd52b5031a07fc2b12209f5b2e29e5d364a7d37f69d8076',
+    TokenVesting  : '0x185d46b6efdd22004d93fdba8e230fbd2ae57c2d2a51ab0e4e62376733023b94'
 };
 
 Object.keys(contracts).forEach((key) => {
