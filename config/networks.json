@@ -10,8 +10,8 @@
         },
         "coverage": {
             "host":     "localhost",
-            "port":     7545,
-            "chainId":  "5777",
+            "port":     8555,
+            "chainId":  "*",
             "gas":      17592186044415,
             "gasPrice": 1
         },
