@@ -64,6 +64,7 @@ module.exports = {
         rinkebyInfura:  getInfuraConfig("rinkeby"),
         ropstenInfura:  getInfuraConfig("ropsten"),
         kovanInfura:  getInfuraConfig("kovan"),
+        mainnetInfura:  getInfuraConfig("mainnet")
     },
     build_directory:            buildDir,            // eslint-disable-line
     contracts_build_directory:  buildDirContracts,   // eslint-disable-line
