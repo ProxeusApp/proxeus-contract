@@ -20,33 +20,6 @@ yarn install
 ```
 This will install all required dependencies in the directory _node_modules_.
 
-## Compile, migrate, test and coverage
-To compile, deploy and test the smart contracts, go into the projects root directory and use the task runner accordingly.
-```
-# Compile contract
-yarn compile
-
-# Migrate contract
-yarn migrate
-
-# Test the contract
-yarn test
-
-# Run coverage tests
-yarn coverage
-```
-
-## Linter
-Please use a Solidity [VSCode plugin](https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity) or [Remix editor](https://remix.ethereum.org/) (see [Tutorial](https://remix-ide.readthedocs.io/fr/stable/create_deploy.html)) to ensure your contracts follows the style and security guides.
-
-__`yarn test` only runs, if no linter issues detected!__
-
-All security rules should be implemented according [ConsenSys Guide for Smart Contracts](https://consensys.github.io/smart-contract-best-practices/recommendations/).
-
-All style guide rules should be implemented according [Solidity Style Guide](http://solidity.readthedocs.io/en/develop/style-guide.html).
-
-For more information look into the [Solhint docs](https://github.com/protofire/solhint).
-
 ## Requirements
 The server side scripts requires NodeJS >= 11 to work properly.
 Go to [NVM](https://github.com/creationix/nvm) and follow the installation description.
@@ -78,19 +51,67 @@ Depending on your system the following components might be already available or 
 
 __Every command must be executed from within the projects base directory!__
 
-## Infura Testnet Deployment - Ropsten, Rinkeby, & Kovan
-create a `.secrets.json` file in the config directory of this project and insert the following with your Infura API key and mnemonic. Double check and make sure that file name is included in the `.gitignore` file list.
+## Test basic commands and deploy in develop network
+To compile, deploy and test the smart contracts, go into the projects root directory and use the task runner accordingly.
+### Compile
+```
+# Compile contract
+yarn compile
+```
+This task will run `truffle compile --all`
+
+### Migrate (deploy)
+```
+# Migrate contract
+yarn migrate
+```
+This task will run truffle migrate --reset --compile-all --network develop
+You don't need running ganache simulator, it will be run automatically
+
+**develop** network settings are used in this task
+
+### Test
+```
+# Test the contracts
+yarn test
+```
+This task will run `truffle migrate --reset --compile-all --network develop` and then `truffle test --network develop`
+**develop** network settings are used in this task
+
+### Check test coverage
+```
+# Run coverage tests
+yarn coverage
+```
+This task will run `truffle run coverage`
+**coverage** network settings are used in this task
+
+## Deploy via Infura (Ropsten, Kovan, Rinkeby, Mainnet)
+Create a `.secrets.json` file in the config directory of this project and insert the following:
+- your Infura API key
+- mnemonic
+- RPC URL for each chain
+
+You can use `.secrets.example.json` as example
+
+Double check and make sure that file name is included in the `.gitignore` file list.
+
 __Never commit and push your mnemonics!__
 ```
 {
-    "rinkeby": {
-        "host": "https://rinkeby.infura.io/<APIKEY>",
-        "mnemonic": "<MNEMONIC>"
-    }
+  "mnemonic": "spot ... keep",
+  "infura_key": "...",
+  "infura_host": {
+    "rinkeby": "https://rinkeby.infura.io/v3/",
+    "kovan": "https://kovan.infura.io/v3/",
+    "ropsten": "https://ropsten.infura.io/v3/",
+    "mainnet": "https://mainnet.infura.io/v3/"
+  }
 }
 ```
 
-## Rinkeby testnet deployment
+## Test deployment via local GETH node
+### Deploy to Rinkeby via local GETH node
 Start local Rinkeby test node in a separate terminal window and wait for the sync is finished.
 ```
 yarn geth-rinkeby
@@ -131,7 +152,7 @@ You can monitor the deployment live via [Rinkeby](https://rinkeby.etherscan.io/a
 After all, your smart contract can be found on etherscan:
 https://rinkeby.etherscan.io/address/<REAL_CONTRACT_ADDRESS_HERE>
 
-## MainNet deployment
+### MainNet deployment via local GETH node
 __This is the production deployment, so please doublecheck all properties in the config files below `config` folder!__
 
 For the MainNet deployment, you need a Geth installation on your machine.
@@ -179,7 +200,7 @@ You can monitor the deployment live via [Etherscan](https://etherscan.io/address
 After all, your smart contract can be found on etherscan:
 https://etherscan.io/address/<REAL_CONTRACT_ADDRESS_HERE>
 
-### Contract Verification
+## Validate contract on etherscan
 The final step for the Rinkeby / MainNet deployment is the contract verificationSmart contract verification.
 
 This can be done on [Etherscan](https://etherscan.io/address/<REAL_ADDRESS_HERE>) or [Rinkeby Etherscan](https://rinkeby.etherscan.io/address/<REAL_ADDRESS_HERE>).
@@ -201,3 +222,14 @@ Visit [Solc version number](https://github.com/ethereum/solc-bin/tree/gh-pages/b
 - Hit `verify and publish` button
 
 Now your smart contract is verified.
+
+## Linter
+Please use a Solidity [VSCode plugin](https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity) or [Remix editor](https://remix.ethereum.org/) (see [Tutorial](https://remix-ide.readthedocs.io/fr/stable/create_deploy.html)) to ensure your contracts follows the style and security guides.
+
+__`yarn test` only runs, if no linter issues detected!__
+
+All security rules should be implemented according [ConsenSys Guide for Smart Contracts](https://consensys.github.io/smart-contract-best-practices/recommendations/).
+
+All style guide rules should be implemented according [Solidity Style Guide](http://solidity.readthedocs.io/en/develop/style-guide.html).
+
+For more information look into the [Solhint docs](https://github.com/protofire/solhint).
