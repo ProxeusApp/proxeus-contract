@@ -78,7 +78,7 @@ function startServer() {
                 balance: '0xd3c21bcecceda0000000'
             }
         ],
-        mnemonic: cnf.networks.develop.mnemonic,
+        // mnemonic: cnf.networks.develop.mnemonic,
         port: PORT,
         locked: false,
         // debug: true,
@@ -94,7 +94,9 @@ function startServer() {
         };
     }
 
+    log.info('Ganache Server is starting');
     const ganache = Ganache.server(config);
+    log.info('Ganache Server is started');
 
     ganache.listen(PORT, async (err) => {
         if (err) {

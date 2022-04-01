@@ -11,10 +11,7 @@ require('regenerator-runtime/runtime');
 
 const network   = process.env.NETWORK;
 let secrets     = '';
-
-if (network === 'rinkebyInfura') {
-    secrets = require('./config/.secrets.json');
-}
+secrets = require('./config/.secrets.json');
 
 const path      = require('path');
 const basePath  = process.cwd();
@@ -64,7 +61,9 @@ module.exports = {
             gas:        cnf.networks.coverage.gas,
             gasPrice:   cnf.networks.coverage.gasPrice
         },
-        rinkebyInfura:  getRinkebyConfig()
+        rinkebyInfura:  getInfuraConfig("rinkeby"),
+        ropstenInfura:  getInfuraConfig("ropsten"),
+        kovanInfura:  getInfuraConfig("kovan"),
     },
     build_directory:            buildDir,            // eslint-disable-line
     contracts_build_directory:  buildDirContracts,   // eslint-disable-line
@@ -73,18 +72,14 @@ module.exports = {
     test_directory:             testDir              // eslint-disable-line
 };
 
-function getRinkebyConfig() {
-    let rinkebyProvider = '';
+function getInfuraConfig(networkName) {
+    let infuraProvider = new HDWalletProvider(secrets.mnemonic, secrets.infura_host[networkName] + secrets.infura_key);
 
-    if (network === 'rinkebyInfura') {
-        rinkebyProvider = new HDWalletProvider(secrets.rinkeby.mnemonic, secrets.rinkeby.host);
-
-        return {
-            network_id: cnf.networks.rinkeby.chainId, // eslint-disable-line
-            provider:   rinkebyProvider,
-            from:       rinkebyProvider.getAddress(),
-            gas:        cnf.networks.rinkeby.gas,
-            gasPrice:   cnf.networks.rinkeby.gasPrice
-        };
-    }
+    return {
+        network_id: cnf.networks[networkName].chainId, // eslint-disable-line
+        provider:   infuraProvider,
+        from:       infuraProvider.getAddress(),
+        gas:        cnf.networks[networkName].gas,
+        gasPrice:   cnf.networks[networkName].gasPrice
+    };
 }
