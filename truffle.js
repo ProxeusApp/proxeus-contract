@@ -64,6 +64,8 @@ module.exports = {
         rinkebyInfura:  getInfuraConfig("rinkeby"),
         ropstenInfura:  getInfuraConfig("ropsten"),
         kovanInfura:  getInfuraConfig("kovan"),
+        mumbaiInfura:  getInfuraConfig("mumbai"),
+        polygonInfura:  getInfuraConfig("polygon"),
         mainnetInfura:  getInfuraConfig("mainnet")
     },
     build_directory:            buildDir,            // eslint-disable-line

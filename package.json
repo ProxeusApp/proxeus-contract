@@ -18,6 +18,8 @@
     "deploy-rinkeby:infura": "npx cross-env NETWORK=rinkebyInfura truffle migrate --reset --compile-all --network rinkebyInfura",
     "deploy-ropsten:infura": "npx cross-env NETWORK=ropstenInfura truffle migrate --reset --compile-all --network ropstenInfura",
     "deploy-kovan:infura": "npx cross-env NETWORK=kovanInfura truffle migrate --reset --compile-all --network kovanInfura",
+    "deploy-mumbai:infura": "npx cross-env NETWORK=mumbaiInfura truffle migrate --reset --compile-all --network mumbaiInfura",
+    "deploy-polygon:infura": "npx cross-env NETWORK=polygonInfura truffle migrate --reset --compile-all --network polygonInfura",
     "deploy-mainnet:infura": "npx cross-env NETWORK=mainnetInfura truffle migrate --reset --compile-all --network mainnetInfura",
     "deploy-mainnet": "npx cross-env NODE_ENV=mainnet cross-env TASK=deploy node ./tools/server/index",
     "bundle": "npx cross-env TASK=bundle node ./tools/server/index",
