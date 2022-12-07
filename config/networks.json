@@ -15,27 +15,10 @@
       "gas": 17592186044415,
       "gasPrice": 1
     },
-    "rinkeby": {
-      "chainId": 4,
+    "goerli": {
+      "chainId": 5,
       "host": "127.0.0.1",
-      "port": 8545,
-      "gas": 6500000,
-      "gasPrice": 100000000000
-    },
-    "kovan": {
-      "chainId": 42,
-      "host": "127.0.0.1",
-      "port": 8545,
-      "gas": 6500000,
-      "gasPrice": 100000000000
-
-    },
-    "ropsten": {
-      "chainId": 3,
-      "host": "127.0.0.1",
-      "port": 8545,
-      "gas": 6500000,
-      "gasPrice": 100000000000
+      "port": 8545
     },
     "mumbai": {
       "chainId": 80001,
