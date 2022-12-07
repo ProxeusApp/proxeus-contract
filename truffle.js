@@ -28,8 +28,8 @@ module.exports = {
         'truffle-plugin-verify'
     ],
     api_keys: {
-        etherscan: '83Y859BNMYATYNG6UN67A2JNFWR7223IBK', //Put in here te etherscan API key for contract verification
-        polygonscan: '4F6CB1FJDWWIW69AZ8CCFZBFP8NBM7UW98' //Put in here te etherscan API key for contract verification
+        etherscan: secrets.etherscan_key, //Put in here te etherscan API key for contract verification
+        polygonscan: secrets.polygonscan_key //Put in here te etherscan API key for contract verification
     },
     mocha: {
         useColors: true // disable bottom for testing dev/troubleshooting
@@ -66,15 +66,9 @@ module.exports = {
             gas:        cnf.networks.coverage.gas,
             gasPrice:   cnf.networks.coverage.gasPrice
         },
-<<<<<<< Updated upstream
-        rinkebyInfura:  getInfuraConfig("rinkeby"),
-        ropstenInfura:  getInfuraConfig("ropsten"),
-        kovanInfura:  getInfuraConfig("kovan"),
-=======
         goerliInfura:  getInfuraConfig("goerli"),
         mumbaiInfura:  getInfuraConfig("mumbai"),
         polygonInfura:  getInfuraConfig("polygon"),
->>>>>>> Stashed changes
         mainnetInfura:  getInfuraConfig("mainnet")
     },
     build_directory:            buildDir,            // eslint-disable-line
