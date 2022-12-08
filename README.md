@@ -233,3 +233,28 @@ All security rules should be implemented according [ConsenSys Guide for Smart Co
 All style guide rules should be implemented according [Solidity Style Guide](http://solidity.readthedocs.io/en/develop/style-guide.html).
 
 For more information look into the [Solhint docs](https://github.com/protofire/solhint).
+
+
+# Smart contract addresses
+
+## Goerli
+XESContractAddress
+`0x15FeA089CC48B4f4596242c138156e3B53579B37`
+
+FilesStorageAddress
+`0x66FF4FBF80D4a3C85a54974446309a2858221689`
+
+## Mainnet
+XESContractAddress
+`0xa017ac5fac5941f95010b12570b812c974469c2c`
+
+FilesStorageAddress
+`0xf63e471d8cbc57517c37c39c35381a385628e012`
+
+
+## Polygon-mumbai
+XESContractAddress
+`0xf94BdC648A30719fF0cf91B436f9819F7804e1a0`
+
+FilesStorageAddress
+`0x00119d8C02bbC4c1231D054BB2813792B4411Ed5`

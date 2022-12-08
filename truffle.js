@@ -24,8 +24,13 @@ const migrationsDir     = path.join(basePath, 'migrations/contracts');
 
 module.exports = {
     plugins: [
-        'solidity-coverage'
+        'solidity-coverage',
+        'truffle-plugin-verify'
     ],
+    api_keys: {
+        etherscan: secrets.etherscan_key, //Put in here te etherscan API key for contract verification
+        polygonscan: secrets.polygonscan_key //Put in here te etherscan API key for contract verification
+    },
     mocha: {
         useColors: true // disable bottom for testing dev/troubleshooting
         // reporter: 'eth-gas-reporter',
@@ -61,9 +66,7 @@ module.exports = {
             gas:        cnf.networks.coverage.gas,
             gasPrice:   cnf.networks.coverage.gasPrice
         },
-        rinkebyInfura:  getInfuraConfig("rinkeby"),
-        ropstenInfura:  getInfuraConfig("ropsten"),
-        kovanInfura:  getInfuraConfig("kovan"),
+        goerliInfura:  getInfuraConfig("goerli"),
         mumbaiInfura:  getInfuraConfig("mumbai"),
         polygonInfura:  getInfuraConfig("polygon"),
         mainnetInfura:  getInfuraConfig("mainnet")
