@@ -35,10 +35,10 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^2",
-    "@truffle/hdwallet-provider": "^2",
+    "@truffle/hdwallet-provider": "^2.1.11",
     "ethers": "^5",
     "moment": "^2",
-    "truffle": "^5",
+    "truffle": "^5.9.0",
     "truffle-assertions": "^0.9",
     "truffle-flattener": "^1",
     "web3": "^1",
