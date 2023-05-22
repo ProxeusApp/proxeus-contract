@@ -15,6 +15,7 @@
     "compile": "npx cross-env NODE_ENV=develop cross-env TASK=compile node ./tools/server/index",
     "migrate": "npx cross-env NODE_ENV=develop cross-env TASK=migrate node ./tools/server/index",
     "deploy-goerli:infura": "npx cross-env NETWORK=goerliInfura truffle migrate --reset --compile-all --network goerliInfura",
+    "deploy-sepolia:infura": "npx cross-env NETWORK=sepoliaInfura truffle migrate --reset --compile-all --network sepoliaInfura",
     "deploy-mumbai:infura": "npx cross-env NETWORK=mumbaiInfura truffle migrate --reset --compile-all --network mumbaiInfura",
     "deploy-polygon:infura": "npx cross-env NETWORK=polygonInfura truffle migrate --reset --compile-all --network polygonInfura",
     "deploy-mainnet:infura": "npx cross-env NETWORK=mainnetInfura truffle migrate --reset --compile-all --network mainnetInfura",
@@ -67,10 +68,10 @@
     "shx": "*",
     "solc": "*",
     "solhint": "*",
-    "solidity-coverage": "*",
+    "solidity-coverage": "0.7.22",
     "superagent": "*",
     "tree-kill": "*",
-    "truffle-plugin-verify": "^0.5.26"
+    "truffle-plugin-verify": "0.6.1"
   },
   "optionalDevDependencies": {
     "fsevents": "*",

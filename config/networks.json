@@ -27,6 +27,11 @@
       "gas": 7500000,
       "gasPrice": 40000000000
     },
+    "sepolia": {
+      "chainId": 11155111,
+      "host": "127.0.0.1",
+      "port": 8545
+    },
     "polygon": {
       "chainId": 137,
       "host": "127.0.0.1",
