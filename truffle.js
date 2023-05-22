@@ -89,6 +89,6 @@ function getInfuraConfig(networkName) {
         gas:        cnf.networks[networkName].gas,
         gasPrice:   cnf.networks[networkName].gasPrice,
         networkCheckTimeout: 10000,
-  timeoutBlocks: 200
+        timeoutBlocks: 200
     };
 }
