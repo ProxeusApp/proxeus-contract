@@ -66,11 +66,11 @@ module.exports = {
             gas:        cnf.networks.coverage.gas,
             gasPrice:   cnf.networks.coverage.gasPrice
         },
-        // goerliInfura:  getInfuraConfig("goerli"),
+        goerliInfura:  getInfuraConfig("goerli"),
         sepoliaInfura:  getInfuraConfig("sepolia"),
-        // mumbaiInfura:  getInfuraConfig("mumbai"),
-        // polygonInfura:  getInfuraConfig("polygon"),
-        // mainnetInfura:  getInfuraConfig("mainnet")
+        mumbaiInfura:  getInfuraConfig("mumbai"),
+        polygonInfura:  getInfuraConfig("polygon"),
+        mainnetInfura:  getInfuraConfig("mainnet")
     },
     build_directory:            buildDir,            // eslint-disable-line
     contracts_build_directory:  buildDirContracts,   // eslint-disable-line
