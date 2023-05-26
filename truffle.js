@@ -67,6 +67,7 @@ module.exports = {
             gasPrice:   cnf.networks.coverage.gasPrice
         },
         goerliInfura:  getInfuraConfig("goerli"),
+        sepoliaInfura:  getInfuraConfig("sepolia"),
         mumbaiInfura:  getInfuraConfig("mumbai"),
         polygonInfura:  getInfuraConfig("polygon"),
         mainnetInfura:  getInfuraConfig("mainnet")
@@ -86,6 +87,8 @@ function getInfuraConfig(networkName) {
         provider:   infuraProvider,
         from:       infuraProvider.getAddress(),
         gas:        cnf.networks[networkName].gas,
-        gasPrice:   cnf.networks[networkName].gasPrice
+        gasPrice:   cnf.networks[networkName].gasPrice,
+        networkCheckTimeout: 10000,
+        timeoutBlocks: 200
     };
 }

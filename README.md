@@ -292,3 +292,17 @@ https://polygonscan.com/address/0x6B586cdC3f889AD4C9FA78000F99C54e88F66459
 `0x60970BeFda93464A105DD21Dc6a30B69C5B5c6e4`
 
 https://polygonscan.com/address/0x60970BeFda93464A105DD21Dc6a30B69C5B5c6e4
+
+## Sepolia
+**XESContractAddress**
+
+`0x6B586cdC3f889AD4C9FA78000F99C54e88F66459`
+
+https://sepolia.etherscan.io/address/0x6B586cdC3f889AD4C9FA78000F99C54e88F66459#code
+
+
+**FilesStorageAddress**
+
+`0x60970BeFda93464A105DD21Dc6a30B69C5B5c6e4`
+
+https://sepolia.etherscan.io/address/0x60970BeFda93464A105DD21Dc6a30B69C5B5c6e4#code
