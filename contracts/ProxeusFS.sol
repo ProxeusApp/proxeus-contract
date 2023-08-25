@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.19;
 
 /// @title Proxeus File Storage Contract
 /// @notice ProxeusFS provides a store to register & sign hashes of documents

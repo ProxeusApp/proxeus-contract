@@ -8,6 +8,6 @@
         "const-name-snakecase": "off",
         "max-states-count": "off",
         "indent": ["warn", 4],
-        "compiler-version": ["error", "^0.8.9"]
+        "compiler-version": ["error", "^0.8.19"]
     }
 }
